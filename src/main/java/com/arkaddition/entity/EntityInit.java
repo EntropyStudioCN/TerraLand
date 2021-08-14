@@ -11,7 +11,8 @@ public class EntityInit {
 	//对生物信息进行注册
     public static void registerEntities(){
                     //生物名称，所编写的生物类，在Reference中的名称，追踪范围，生物蛋颜色1，颜色2  
-        //registerEntity("ra3", EntityRA3.class, Reference.xxx, 20, 14833957, 0);
+        registerEntity("source_stone_bug", SourceStoneBugEntity.class, 114514, 20, 14833957, 0);
+
     }   
 
 

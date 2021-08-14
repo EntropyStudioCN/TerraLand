@@ -1,0 +1,20 @@
+[
+  {
+    "modid": "TerraLand",
+    "name": "TerraLand",
+    "description": "TerraLand",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "IAXRetailer",
+      "CanYingisme",
+      "RickardRK"
+    ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]

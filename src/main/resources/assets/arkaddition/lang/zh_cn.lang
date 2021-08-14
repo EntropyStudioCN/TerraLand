@@ -1,0 +1,14 @@
+#tab
+itemGroup.tabarkaddition=更多粥物(材料)
+itemGroup.tabarkaddition2=更多粥物(兑换物)
+itemGroup.tabarkaddition1=更多粥物(其他)
+
+#items
+#item.Originiums.name=至纯源石
+#FOOD
+item.two_burger_set.name=双人汉堡餐
+item.peterheim_honey_biscuits.name=彼德海姆热销饼干
+item.gaint_hoof_energy_drink.name=丰蹄能量饮料
+item.salted_egg_yolk_chocolate.name=咸蛋黄味巧克力
+item.dehydrated_cactus.name=脱水仙人掌干
+item.baklava.name=蜜饼

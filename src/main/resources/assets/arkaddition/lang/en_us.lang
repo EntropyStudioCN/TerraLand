@@ -1,0 +1,14 @@
+#tab
+itemGroup.tabarkaddition=ArkMaterial
+itemGroup.tabarkaddition2=ArkExchange
+itemGroup.tabarkaddition2=ArkOther
+
+#items
+#item.Originiums.name=Originiums
+#FOOD
+item.two_burger_set.name=Two Burger Set
+item.peterheim_honey_biscuits.name=Peterheim Honey Biscuits
+item.gaint_hoof_energy_drink.name=Gaint Hoof Energy Drink
+item.salted_egg_yolk_chocolate.name=Salted-Egg-Yolk Chocolate
+item.dehydrated_cactus.name=Dehydrated cactus
+item.baklava.name=Baklava

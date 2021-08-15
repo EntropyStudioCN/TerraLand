@@ -2,6 +2,7 @@ buildscript {
     repositories {
         maven { url = 'https://maven.minecraftforge.net' }
         maven { url = 'https://plugins.gradle.org/m2/' }
+        maven { url 'https://repo.spongepowered.org/maven' }
         mavenCentral()
     }
     dependencies {
@@ -95,7 +96,6 @@ dependencies {
     // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2855'
-
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"
     // compile "some.group:artifact:version"
@@ -119,6 +119,8 @@ dependencies {
 
 // Example for how to get properties into the manifest for reading by the runtime..
 shadowJar {
+    dependencies {
+    }
 }
 jar {
     manifest {

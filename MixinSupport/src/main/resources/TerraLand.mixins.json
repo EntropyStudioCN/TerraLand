@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "al.nya.terralandmixinsupport.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "TerraLand.refmap.json",
+  "mixins": [
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

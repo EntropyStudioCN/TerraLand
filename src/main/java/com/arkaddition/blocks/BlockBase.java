@@ -12,16 +12,6 @@ import com.arkaddition.init.ModBlocks;
 import com.arkaddition.init.ModItems;
 import com.arkaddition.util.IHasModel;
 
-
-
-
-
-
-
-
-
-
-
 public class BlockBase extends Block implements IHasModel{
 	public BlockBase(String name, Material material) {
         super(material);

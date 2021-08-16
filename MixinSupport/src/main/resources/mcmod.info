@@ -1,0 +1,16 @@
+[
+  {
+    "modid": "TerraLandMixinSupport",
+    "name": "TerraLandMixinSupport",
+    "description": "Make TerraLand support Mixin",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]

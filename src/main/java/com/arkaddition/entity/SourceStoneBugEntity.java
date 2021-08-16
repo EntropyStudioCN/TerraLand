@@ -1,5 +1,6 @@
 package com.arkaddition.entity;
 
+import com.arkaddition.entity.ai.EntityAILowHealthNearestAttackableTarget;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -17,7 +18,7 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class SourceStoneBugEntity extends EntityCreature implements IAnimatable {
+public class SourceStoneBugEntity extends EntityMob implements IAnimatable {
     AnimationFactory factory = new AnimationFactory(this);
     private int size = 1;
     public SourceStoneBugEntity(World worldIn)
@@ -27,8 +28,8 @@ public class SourceStoneBugEntity extends EntityCreature implements IAnimatable 
         this.setSize(0.8f*size,0.4f*size);
     }
     protected void initEntityAI() {
+        this.tasks.addTask(1, new EntityAIAttackMelee(this, 1.0D, true));
         this.tasks.addTask(0, new EntityAISwimming(this));
-        //this.tasks.addTask(2, new EntityAIZombieAttack(this, 1.0D, false));
         this.tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1.0D));
         this.tasks.addTask(7, new EntityAIWanderAvoidWater(this, 1.0D));
         this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
@@ -37,18 +38,18 @@ public class SourceStoneBugEntity extends EntityCreature implements IAnimatable 
     }
 
     protected void applyEntityAI() {
-        this.tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true, new Class[]{}));
-        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
+        this.targetTasks.addTask(0, new EntityAILowHealthNearestAttackableTarget<EntityPlayer>(this, EntityPlayer.class, true,9.9F));//30%
+        //this.targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityPlayer>(this, EntityPlayer.class, true));
     }
     @Override
     protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
 
-        //this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(33.0D);
-        //this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
-        //this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(1.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(33.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
+        this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(1.0D);
     }
     public int getSize() {
         return size;

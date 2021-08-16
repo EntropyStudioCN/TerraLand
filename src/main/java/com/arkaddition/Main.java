@@ -2,6 +2,8 @@ package com.arkaddition;
 
 import com.arkaddition.entity.EntityInit;
 import com.arkaddition.entity.render.ArkRenderManager;
+import com.arkaddition.event.ArkEventHandler;
+import com.arkaddition.event.S_stone;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraftforge.fml.common.Mod;
@@ -37,6 +39,8 @@ public class Main {
         GeckoLib.initialize();
         RenderManager renderManager = Minecraft.getMinecraft().getRenderManager();
         ArkRenderManager.register(renderManager);
+        new ArkEventHandler();
+        new S_stone();
     }
 
     @EventHandler

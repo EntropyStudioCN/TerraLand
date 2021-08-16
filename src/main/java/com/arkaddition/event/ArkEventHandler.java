@@ -11,6 +11,7 @@ import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.world.BlockEvent.BreakEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -21,7 +22,7 @@ import java.util.List;
 import java.util.Random;
 
 @Mod.EventBusSubscriber
-public class EventHandler {
+public class ArkEventHandler {
 
     public static int timerDis = 0;
     public static int timerDisWait = 0;
@@ -227,7 +228,7 @@ public class EventHandler {
 
 
     @SubscribeEvent
-    public static void onr(TickEvent.PlayerTickEvent event) {
+    public void onr(TickEvent.PlayerTickEvent event) {
             if (sand) {
                 EntityPlayer pl = event.player;
                 pl.addVelocity(sandTowx, 0, sandTowz);

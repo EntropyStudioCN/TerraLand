@@ -26,7 +26,7 @@ public class ModItems {
 	
 	
 	
-	
+
 //auto Tab1
 	public static final Item ALCOHOL_REVERSE = new ItemBase("alcohol_reverse", null);
 	public static final Item ALCOHOL_WHITE_HORSE = new ItemBase("alcohol_white_horse", null);

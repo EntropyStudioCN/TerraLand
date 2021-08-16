@@ -6,7 +6,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialLiquid;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -19,15 +21,14 @@ import net.minecraft.world.World;
 import javax.annotation.Nonnull;
 import java.util.Random;
 
-public class OreBlockBase extends Block {
-    public OreBlockBase() {
-        super(Material.ROCK, MapColor.STONE);
-        this.setSoundType(SoundType.STONE);
-        this.setHardness(2.5F);
+public class OreDifferentIRON extends BlockBase {
+    public OreDifferentIRON(String name, Material material, CreativeTabs tab) {
+        super(name,material,tab);
 
-
-
-        this.setHarvestLevel("pickaxe", 2);
+        setSoundType(SoundType.STONE);
+        setHardness(2.5F);
+        setResistance(15.0f);
+        setHarvestLevel("pickaxe", 2);
 
     }
 
@@ -64,4 +65,5 @@ public class OreBlockBase extends Block {
     public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
        return new ItemStack(this);
       }
+
 }

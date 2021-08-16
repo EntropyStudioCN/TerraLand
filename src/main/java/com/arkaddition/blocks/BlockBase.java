@@ -13,11 +13,11 @@ import com.arkaddition.init.ModItems;
 import com.arkaddition.util.IHasModel;
 
 public class BlockBase extends Block implements IHasModel{
-	public BlockBase(String name, Material material) {
+	public BlockBase(String name, Material material, CreativeTabs tab) {
         super(material);
         setTranslationKey(name);
         setRegistryName(name);
-        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);//将你的方块放在哪个物品栏，这里我们选择的是草方块(建筑方块)那一类
+        setCreativeTab(tab);
 
         ModBlocks.BLOCKS.add(this);
         ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));

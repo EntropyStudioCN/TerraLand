@@ -12,7 +12,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class EffectDrinkBase extends DrinkerBase implements IHasModel {
-    //我们这个食物定义5种效果，你可以继续加效果进来……
     PotionEffect effect1,effect2,effect3,effect4,effect5;
     public EffectDrinkBase(String name, int amount, float saturation, boolean iswolfFood, CreativeTabs tab, PotionEffect effect1, PotionEffect effect2, PotionEffect effect3
             , PotionEffect effect4, PotionEffect effect5) {

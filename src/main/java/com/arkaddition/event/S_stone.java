@@ -58,7 +58,7 @@ public class S_stone {
     public S_stone(){
         MinecraftForge.EVENT_BUS.register(this);
     }
-    @SubscribeEvent
+    //@SubscribeEvent
     public static void onright(PlayerInteractEvent.RightClickItem event) {if (round.size() > 0){
             for (int o = 0; o < round.size(); o++) {
                 Methods.line(point, round.get(o), Blocks.GLASS, event.getWorld());
@@ -95,7 +95,7 @@ public class S_stone {
     }
     }
 
-   @SubscribeEvent
+   //@SubscribeEvent
     public static void onleft(BlockEvent.BreakEvent event) {
         round.clear();
         inner.clear();

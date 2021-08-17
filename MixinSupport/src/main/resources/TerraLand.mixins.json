@@ -5,9 +5,12 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "TerraLand.refmap.json",
   "mixins": [
+    "MixinMainMenu"
   ],
   "client": [
-    "MixinEntityPlayer"
+    "MixinEntityPlayer",
+    "MixinGuiIngame",
+    "MixinMinecraft"
   ],
   "injectors": {
     "defaultRequire": 1

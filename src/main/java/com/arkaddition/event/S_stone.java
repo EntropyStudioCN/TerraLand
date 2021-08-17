@@ -3,6 +3,7 @@ package com.arkaddition.event;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -54,7 +55,9 @@ public class S_stone {
     static List<BlockPos> inner8 = new ArrayList<>();
     static List<BlockPos> round9 = new ArrayList<>();
     static List<BlockPos> inner9 = new ArrayList<>();
-
+    public S_stone(){
+        MinecraftForge.EVENT_BUS.register(this);
+    }
     @SubscribeEvent
     public static void onright(PlayerInteractEvent.RightClickItem event) {if (round.size() > 0){
             for (int o = 0; o < round.size(); o++) {
@@ -92,7 +95,7 @@ public class S_stone {
     }
     }
 
-   // @SubscribeEvent
+   @SubscribeEvent
     public static void onleft(BlockEvent.BreakEvent event) {
         round.clear();
         inner.clear();

@@ -14,6 +14,7 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 @Mod.EventBusSubscriber
     public class EventHandler {
+    /*
         public static int level;
         public static EntityLivingBase ent;
 
@@ -84,5 +85,5 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
                     }
                 }
             }
-        }
+        }*/
 }

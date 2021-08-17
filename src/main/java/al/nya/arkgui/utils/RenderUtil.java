@@ -1,4 +1,4 @@
-package com.arkaddition.util;
+package al.nya.arkgui.utils;
 
 import org.lwjgl.opengl.GL11;
 

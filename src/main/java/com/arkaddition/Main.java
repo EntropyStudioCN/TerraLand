@@ -25,9 +25,10 @@ import software.bernie.geckolib3.GeckoLib;
 public class Main {
     @Instance
     public static Main instance;
-
     @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.COMMON_PROXY_CLASS)
     public static CommonProxy proxy;
+
+    public static boolean DEV_VERSION = true;
 
     @EventHandler
     public static void PreInit(FMLPreInitializationEvent event)

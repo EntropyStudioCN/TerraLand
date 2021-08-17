@@ -15,6 +15,10 @@ public class ModBlocks {
     public static final Block TORNADOO_SANDSTORM = new BlockBase("tornadoo_sandstrom", Material.IRON, TabArkAddition3Block0.TABARKADDITION3BLOCK0);
     public static final Block TORNADOO = new BlockBase("tornadoo", Material.IRON, TabArkAddition3Block0.TABARKADDITION3BLOCK0 );
     public static final Block OREDIFFERENTIRON = new OreDifferentIRON("oredifferentiron",Material.IRON, TabArkAddition3Block0.TABARKADDITION3BLOCK0);
+
+    public static final Block SOURCESTONECORE = new BlockBase("soucestonecore",Material.IRON, TabArkAddition3Block0.TABARKADDITION3BLOCK0);
+    public static final Block SOURCESTONEOUT = new BlockBase("soucestoneout",Material.GLASS, TabArkAddition3Block0.TABARKADDITION3BLOCK0);
+
 }
 
 

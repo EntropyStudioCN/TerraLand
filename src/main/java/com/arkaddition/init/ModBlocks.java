@@ -1,6 +1,7 @@
 package com.arkaddition.init;
 
 import com.arkaddition.blocks.OreDifferentIRON;
+import com.arkaddition.blocks.SourceStoneCore;
 import com.arkaddition.creativetab.TabArkAddition3Block0;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -18,7 +19,7 @@ public class ModBlocks {
 
     public static final Block OREDIFFERENTIRON = new OreDifferentIRON("oredifferentiron",Material.IRON, TabArkAddition3Block0.TABARKADDITION3BLOCK0,0,0,5.0F,SoundType.STONE,300.0f);
 
-    public static final Block SOURCESTONECORE = new BlockBase("soucestonecore",Material.IRON, TabArkAddition3Block0.TABARKADDITION3BLOCK0,15.0f,1,70.0f,SoundType.GLASS,-1.0f);
+    public static final Block SOURCESTONECORE = new SourceStoneCore();
     public static final Block SOURCESTONEOUT = new BlockBase("soucestoneout",Material.GLASS, TabArkAddition3Block0.TABARKADDITION3BLOCK0,0,0,80.0f, SoundType.STONE,-1.0f);
 
 }

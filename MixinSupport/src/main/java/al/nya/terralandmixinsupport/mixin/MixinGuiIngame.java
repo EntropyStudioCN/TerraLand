@@ -25,25 +25,36 @@ import java.util.Iterator;
 import java.util.List;
 
 
-@Mixin(GuiIngameForge.class)//Stupid Forge WHY REWRITE GUIINGAME!!!
+@Mixin(value = GuiIngameForge.class)//Stupid Forge WHY REWRITE GUIINGAME!!!
 @Debug(export = true)
-public class MixinGuiIngame extends GuiIngame{
+public class MixinGuiIngame{
     private GuiIngame mcGui;
     private Minecraft mc;
 
-    public MixinGuiIngame(Minecraft p_i46325_1_) {
-        super(p_i46325_1_);
-    }
 
     /**
      * @author CanYingisme
      */
     @Inject(method = "renderGameOverlay",at = @At("HEAD"))
     public void renderGameOverlay(float partialTicks, CallbackInfo ci){
-
+        try {
+            Class.forName("al.nya.arkgui.gui.ArkInGame").getMethod("render2D", float.class, GuiIngameForge.class).invoke(null,partialTicks,this);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
     @Inject(method = "<init>",at = @At("RETURN"))
     public void fuckForge(Minecraft mc, CallbackInfo ci){
         this.mc = mc;
+    }
+    @Inject(method = "renderExperience", at = @At(value = "HEAD"), cancellable = true,remap = false)
+    public void removeExp(int width, int height, CallbackInfo ci){
+        ci.cancel();
     }
 }

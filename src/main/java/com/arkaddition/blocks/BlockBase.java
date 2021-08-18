@@ -1,6 +1,5 @@
 package com.arkaddition.blocks;
 
-import javafx.scene.effect.Light;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;

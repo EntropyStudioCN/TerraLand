@@ -10,6 +10,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class MixinEntityPlayer {
     @Inject(method = "getCooledAttackStrength",at = @At("HEAD"), cancellable = true)
     public void hookCoolDown(float p_184825_1_, CallbackInfoReturnable<Float> cir){
-        cir.setReturnValue(0F);
+        cir.setReturnValue(1F);
     }
 }

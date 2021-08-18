@@ -58,7 +58,7 @@ public class ArkEventHandler {
         tickerDis++;
         if (timerDis <= 0) {
             if (new Random().nextInt(1919810) == 2 && player != null) {
-                player.sendMessage(new TextComponentTranslation("message.arkitems.disaster.wait"));
+                player.sendMessage(new TextComponentTranslation("message.ag.arkitems.disaster.wait"));
                 timerDisWait = 6000 + new Random().nextInt(6000);
                 timerDis = new Random().nextInt(12000) + 6000;//天灾开启
                 posMin = new BlockPos(player.posX - 50, 0, player.posZ - 50);

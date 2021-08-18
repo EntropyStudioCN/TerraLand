@@ -22,11 +22,11 @@ import javax.annotation.Nonnull;
 import java.util.Random;
 
 public class OreDifferentIRON extends BlockBase {
-    public OreDifferentIRON(String name, Material material, CreativeTabs tab) {
-        super(name,material,tab);
+    public OreDifferentIRON(String name, Material material, CreativeTabs tab,float lightlevel,int Opacity,float hard,SoundType sound,float Resistance) {
+        super(name,material,tab,lightlevel,Opacity,hard,sound,Resistance);
 
         setSoundType(SoundType.STONE);
-        setHardness(2.5F);
+        setHardness(5.0F);
         setResistance(15.0f);
         setHarvestLevel("pickaxe", 2);
 
@@ -60,7 +60,7 @@ public class OreDifferentIRON extends BlockBase {
         Random random = world instanceof World ? ((World) world).rand : new Random();
        return MathHelper.getInt(random, 3, 7);
     }
-    // Forge 的 patch，取代 getItem (func_185473_a)，用于创造模式下鼠标中键选取方块的功能。
+
     @Override
     public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
        return new ItemStack(this);

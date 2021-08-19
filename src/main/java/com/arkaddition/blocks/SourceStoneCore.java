@@ -6,6 +6,8 @@ import com.arkaddition.init.ModBlocks;
 import com.arkaddition.init.ModItems;
 import com.arkaddition.util.IHasModel;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockContainer;
+import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -19,13 +21,15 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import javax.annotation.Nullable;
 import java.util.Random;
 
-public class SourceStoneCore extends Block implements IHasModel {
+public class SourceStoneCore extends Block implements IHasModel, ITileEntityProvider {
     public static DataParameter<Float> RADIATION = EntityDataManager.createKey(EntityPlayer.class, DataSerializers.FLOAT);
+    public static DataParameter<Float> DISTANCE = EntityDataManager.createKey(EntityPlayer.class, DataSerializers.FLOAT);
     public SourceStoneCore() {
         super(Material.IRON);
-        setTranslationKey("com.ark.soucestonecore");
+        setTranslationKey("soucestonecore");
         setRegistryName("soucestonecore");
         setCreativeTab(TabArkAddition3Block0.TABARKADDITION3BLOCK0);
         setLightLevel(15F);
@@ -52,22 +56,13 @@ public class SourceStoneCore extends Block implements IHasModel {
 
     }
     @Override
-    public void updateTick(World p_180650_1_, BlockPos p_180650_2_, IBlockState p_180650_3_, Random p_180650_4_){
+    public void updateTick(World p_180650_1_, BlockPos p_180650_2_, IBlockState p_180650_3_, Random p_180650_4_) {
         //WARN: Maybe it will make lag
-        System.out.println("Tick");
-        for (Entity entity : p_180650_1_.getLoadedEntityList()) {
-            if (entity instanceof EntityPlayer){
-                float distance = (float) entity.getDistance(p_180650_2_.getX(),p_180650_2_.getY(),p_180650_2_.getZ());
-                if (distance <= 7 && !(distance < 0)){
-                    float radiation = 7 - distance;
-                    if (entity.getDataManager().get(RADIATION) < radiation)
-                    entity.getDataManager().set(RADIATION,radiation);
-                }else {
-                    if (entity.getDataManager().get(RADIATION) != 0F){
-                        entity.getDataManager().set(RADIATION,0F);
-                    }
-                }
-            }
-        }
+    }
+
+    @Nullable
+    @Override
+    public TileEntity createNewTileEntity(World world, int i) {
+        return new SSCTileEnity ();
     }
 }

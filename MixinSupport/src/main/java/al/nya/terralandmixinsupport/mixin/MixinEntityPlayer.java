@@ -28,5 +28,15 @@ public class MixinEntityPlayer {
             e.printStackTrace();
         }
         if (dataParameter != null)((EntityPlayer)(Object)this).getDataManager().register(dataParameter,0F);
+        try {
+            dataParameter = (DataParameter<Float>) Class.forName("com.arkaddition.blocks.SourceStoneCore").getField("DISTANCE").get(null);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        if (dataParameter != null)((EntityPlayer)(Object)this).getDataManager().register(dataParameter,0F);
     }
 }

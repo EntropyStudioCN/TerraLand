@@ -1,7 +1,7 @@
 package com.arkaddition.util.handlers;
 
 
-import com.arkaddition.blocks.SSCEntity;
+import com.arkaddition.blocks.SourceStoneCore;
 import com.arkaddition.blocks.TileEnity.SSCTileEnity;
 import com.arkaddition.init.ModBlocks;
 import com.arkaddition.init.ModItems;
@@ -36,7 +36,7 @@ public class RegistryHandler {
     }
     @SubscribeEvent
     public static void onBlockRegistration(RegistryEvent.Register<Block> event) {
-        event.getRegistry().register(new SSCTileEnity ().setRegistryName("SSCTileEnity", "soucestonecore"));
+        event.getRegistry().register(new SourceStoneCore ().setRegistryName("SSCTileEnity", "soucestonecore"));
         // 第一个参数是你要注册的 TileEntity 对应的 class 对象。必须 extends TileEntity。
         // 第二个参数的要求和方块的注册名一致。
         GameRegistry.registerTileEntity(SSCTileEnity.class, new ResourceLocation ("SSCTileEnity", "soucestonecore"));

@@ -1,16 +1,20 @@
 package com.arkaddition.util.handlers;
 
 
+import com.arkaddition.blocks.SSCEntity;
+import com.arkaddition.blocks.TileEnity.SSCTileEnity;
 import com.arkaddition.init.ModBlocks;
 import com.arkaddition.init.ModItems;
 import com.arkaddition.util.IHasModel;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -21,7 +25,7 @@ public class RegistryHandler {
     public static void onItemRegister(RegistryEvent.Register<Item> event) {
         event.getRegistry().registerAll(ModItems.ITEMS.toArray(new Item[0]));
     }
-    //�¼������Ʒ��ע���¼�
+    //�¼������Ʒ��ע���¼�
     @SubscribeEvent
     public static void onBlockRegister(RegistryEvent.Register<Block> event) {
         event.getRegistry().registerAll(ModBlocks.BLOCKS.toArray(new Block[0]));
@@ -29,6 +33,13 @@ public class RegistryHandler {
     
     public static void initRegistries() {
         SoundsHandler.registerSounds();
+    }
+    @SubscribeEvent
+    public static void onBlockRegistration(RegistryEvent.Register<Block> event) {
+        event.getRegistry().register(new SSCTileEnity ().setRegistryName("SSCTileEnity", "soucestonecore"));
+        // 第一个参数是你要注册的 TileEntity 对应的 class 对象。必须 extends TileEntity。
+        // 第二个参数的要求和方块的注册名一致。
+        GameRegistry.registerTileEntity(SSCTileEnity.class, new ResourceLocation ("SSCTileEnity", "soucestonecore"));
     }
     
     @SubscribeEvent
@@ -42,7 +53,7 @@ public class RegistryHandler {
 
     	
     	
-        //�¼������block����Ϣע��
+        //�¼������block����Ϣע��
         for (Block block: ModBlocks.BLOCKS) {
             if (block instanceof IHasModel) {
                 ((IHasModel)block).registerModels();

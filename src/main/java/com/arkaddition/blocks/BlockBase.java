@@ -14,17 +14,14 @@ import com.arkaddition.init.ModItems;
 import com.arkaddition.util.IHasModel;
 
 public class BlockBase extends Block implements IHasModel{
-	public BlockBase(String name, Material material, CreativeTabs tab, float lightlevel, int Opacity, float hard, SoundType sound,float Resistance)
+	public BlockBase(String name, Material material, CreativeTabs tab,SoundType sound,float hard)
     {
         super(material);
         setTranslationKey(name);
         setRegistryName(name);
         setCreativeTab(tab);
-        setLightLevel(lightlevel);
-        setLightOpacity(Opacity);
-        setHardness(hard);
         setSoundType(sound);
-        setResistance(Resistance);
+        setHardness(hard);
 
 
         ModBlocks.BLOCKS.add(this);

@@ -12,18 +12,20 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import sun.java2d.pipe.AAShapePipe;
 
 import javax.annotation.Nonnull;
 import java.util.Random;
 
 public class OreDifferentIRON extends BlockBase {
-    public OreDifferentIRON(String name, Material material, CreativeTabs tab,float lightlevel,int Opacity,float hard,SoundType sound,float Resistance) {
-        super(name,material,tab,lightlevel,Opacity,hard,sound,Resistance);
+    public OreDifferentIRON(String name, Material material, CreativeTabs tab,SoundType sound,float hard) {
+        super(name,material,tab,sound,hard);
 
         setSoundType(SoundType.STONE);
         setHardness(5.0F);
@@ -31,7 +33,6 @@ public class OreDifferentIRON extends BlockBase {
         setHarvestLevel("pickaxe", 2);
 
     }
-
 
 
     @Nonnull
@@ -64,6 +65,6 @@ public class OreDifferentIRON extends BlockBase {
     @Override
     public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
        return new ItemStack(this);
-      }
+    }
 
 }

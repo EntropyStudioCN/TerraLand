@@ -1,5 +1,6 @@
 package com.arkaddition.blocks;
 
+import com.arkaddition.blocks.TileEnity.SSCTileEnity;
 import com.arkaddition.creativetab.TabArkAddition3Block0;
 import com.arkaddition.init.ModBlocks;
 import com.arkaddition.init.ModItems;
@@ -14,6 +15,7 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -34,6 +36,15 @@ public class SourceStoneCore extends Block implements IHasModel {
         this.setTickRandomly(true);
         ModBlocks.BLOCKS.add(this);
         ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
+    }
+    @Override
+    public boolean hasTileEntity(IBlockState state) {
+        return true;
+    }
+
+    @Override
+    public TileEntity createTileEntity(World world, IBlockState state) {
+        return new SSCTileEnity ();
     }
 
     @Override

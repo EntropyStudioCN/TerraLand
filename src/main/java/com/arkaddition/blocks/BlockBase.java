@@ -14,7 +14,7 @@ import com.arkaddition.init.ModItems;
 import com.arkaddition.util.IHasModel;
 
 public class BlockBase extends Block implements IHasModel{
-	public BlockBase(String name, Material material, CreativeTabs tab,SoundType sound,float hard)
+	public BlockBase(String name, Material material, CreativeTabs tab,SoundType sound,float hard,String Tool,int Level)
     {
         super(material);
         setTranslationKey(name);
@@ -22,6 +22,7 @@ public class BlockBase extends Block implements IHasModel{
         setCreativeTab(tab);
         setSoundType(sound);
         setHardness(hard);
+        setHarvestLevel (Tool,Level);
 
 
         ModBlocks.BLOCKS.add(this);

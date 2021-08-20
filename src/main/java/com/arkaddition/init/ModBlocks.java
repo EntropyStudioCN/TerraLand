@@ -15,14 +15,16 @@ import com.arkaddition.blocks.BlockBase;
 
 public class ModBlocks {
     public static final List<Block> BLOCKS = new ArrayList<Block>();
-    public static final Block TORNADOO_SANDSTORM = new BlockBase("tornadoo_sandstrom", Material.IRON, TabArkAddition3Block0.TABARKADDITION3BLOCK0,SoundType.SAND,-1f);
-    public static final Block TORNADOO = new BlockBase("tornadoo", Material.IRON, TabArkAddition3Block0.TABARKADDITION3BLOCK0 ,SoundType.SAND,-1f);
+    public static final Block TORNADOO_SANDSTORM = new BlockBase("tornadoo_sandstrom", Material.IRON, TabArkAddition3Block0.TABARKADDITION3BLOCK0,SoundType.SAND,-1f,"pickaxe",-1);
+    public static final Block TORNADOO = new BlockBase("tornadoo", Material.IRON, TabArkAddition3Block0.TABARKADDITION3BLOCK0 ,SoundType.SAND,-1f,"pickaxe",-1);
 //ores
-    public static final Block ORECU = new OreCu ("orecu",Material.IRON,TabArkAddition3Block0.TABARKADDITION3BLOCK0,SoundType.STONE,5.0f);
-    public static final Block OREDIFFERENTIRON = new OreDifferentIRON("oredifferentiron",Material.IRON, TabArkAddition3Block0.TABARKADDITION3BLOCK0,SoundType.STONE,15.0f);
+    public static final Block ORECU = new OreCu ("orecu",Material.IRON,TabArkAddition3Block0.TABARKADDITION3BLOCK0,SoundType.STONE,5.0f,2,"pickaxe");
+    public static final Block OREDIFFERENTIRON = new OreDifferentIRON("oredifferentiron",Material.IRON, TabArkAddition3Block0.TABARKADDITION3BLOCK0,SoundType.STONE,15.0f,3,"pickaxe");
 //structure
     public static final Block SOURCESTONECORE = new SourceStoneCore();
-    public static final Block SOURCESTONEOUT = new BlockBase("soucestoneout",Material.GLASS, TabArkAddition3Block0.TABARKADDITION3BLOCK0,SoundType.STONE,80f);
+    public static final Block SOURCESTONEOUT = new BlockBase("soucestoneout",Material.GLASS, TabArkAddition3Block0.TABARKADDITION3BLOCK0,SoundType.STONE,80.0f,"pickaxe",1);
+
+    public static final Block ORIROCK = new BlockBase ("orirock",Material.IRON,TabArkAddition3Block0.TABARKADDITION3BLOCK0,SoundType.STONE,3.0f,"pickaxe",1);
 
 
 }

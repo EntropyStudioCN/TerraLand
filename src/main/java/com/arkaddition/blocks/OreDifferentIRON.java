@@ -24,12 +24,10 @@ import javax.annotation.Nonnull;
 import java.util.Random;
 
 public class OreDifferentIRON extends BlockBase {
-    public OreDifferentIRON(String name, Material material, CreativeTabs tab,SoundType sound,float hard) {
-        super(name,material,tab,sound,hard);
+    public OreDifferentIRON(String name, Material material, CreativeTabs tab,SoundType sound,float hard,int level,String Tool) {
+        super(name,material,tab,sound,hard,Tool,level);
 
         setResistance(15.0f);
-        setHarvestLevel("pickaxe", 3);
-
     }
 
 

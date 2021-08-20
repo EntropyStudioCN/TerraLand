@@ -9,6 +9,8 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.math.BlockPos;
 
+import java.util.Random;
+
 
 public final class SSCTileEnity extends TileEntity implements ITickable {
     //private int progress;
@@ -46,13 +48,9 @@ public final class SSCTileEnity extends TileEntity implements ITickable {
             for (Entity entity : this.world.getLoadedEntityList()) {
                 if (entity instanceof EntityPlayer) {
                     float distance = (float) entity.getDistance(bp.getX(), bp.getY(), bp.getZ());
-                    if (distance <= 13 && !(distance < 0)) {
-                        float radiation = 13 - distance;
-                        if (entity.getDataManager().get(SourceStoneCore.RADIATION) < radiation)
-                            entity.getDataManager().set(SourceStoneCore.RADIATION, radiation);
-                    } else {
-                        if (entity.getDataManager().get(SourceStoneCore.RADIATION) != 0F) {
-                            entity.getDataManager().set(SourceStoneCore.RADIATION, 0F);
+                    if (distance <= 7){
+                        if(new Random().nextInt(100)<=15){
+                            entity.getDataManager().set(SourceStoneCore.RADIATION,entity.getDataManager().get(SourceStoneCore.RADIATION)+0.001f);
                         }
                     }
                 }

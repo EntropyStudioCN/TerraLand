@@ -27,7 +27,7 @@ public class GenOreArks implements IWorldGenerator {
         //Write U ores
         //generateOre(ModBlocks.OREDIFFERENTIRON.getDefaultState(),world,random,chunkX*16,chunkZ*16);
        //Different IRON
-        generateOre(ModBlocks.OREDIFFERENTIRON.getDefaultState(),world,random,chunkX*16,chunkZ*16,1,50,random.nextInt(6)+2,random.nextInt(30)+20);
+        generateOre(ModBlocks.OREDIFFERENTIRON.getDefaultState(),world,random,chunkX*16,chunkZ*16,1,50,random.nextInt(4)+2,random.nextInt(10)+5);
 
     }
     private void generateOre(IBlockState ore,World world,Random random,int x,int z,int minY,int maxY,int size,int chances)

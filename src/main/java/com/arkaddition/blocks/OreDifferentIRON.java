@@ -30,7 +30,7 @@ public class OreDifferentIRON extends BlockBase {
         setSoundType(SoundType.STONE);
         setHardness(5.0F);
         setResistance(15.0f);
-        setHarvestLevel("pickaxe", 2);
+        setHarvestLevel("pickaxe", 3);
 
     }
 

@@ -27,8 +27,6 @@ public class OreDifferentIRON extends BlockBase {
     public OreDifferentIRON(String name, Material material, CreativeTabs tab,SoundType sound,float hard) {
         super(name,material,tab,sound,hard);
 
-        setSoundType(SoundType.STONE);
-        setHardness(5.0F);
         setResistance(15.0f);
         setHarvestLevel("pickaxe", 3);
 

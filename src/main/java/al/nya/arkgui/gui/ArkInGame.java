@@ -34,8 +34,8 @@ public class ArkInGame {
             guiIn.drawString(mc.fontRenderer,"Vanilla Exp:"+mc.player.experience,6,25,Color.WHITE.getRGB());
             guiIn.drawString(mc.fontRenderer,"Player Health:"+mc.player.getHealth(),6,35,Color.WHITE.getRGB());
             guiIn.drawString(mc.fontRenderer,"Player Food Level:"+mc.player.getFoodStats().getFoodLevel(),6,45,Color.WHITE.getRGB());
-            guiIn.drawString(mc.fontRenderer,"Client Radiation:"+mc.player.getDataManager().get(SourceStoneCore.RADIATION),6,55,Color.WHITE.getRGB());
-
+            guiIn.drawString(mc.fontRenderer,"Client Radiation:"+(mc.player.getDataManager().get(SourceStoneCore.RADIATION)) +"("+danger()+")",6,55,Color.WHITE.getRGB());
+            //guiIn.drawString(mc.fontRenderer,"Core Distance:"+mc.player.getDataManager().get(SourceStoneCore.DISTANCE) +"("+danger()+")",6,65,Color.WHITE.getRGB());
         }
         Minecraft mc = Minecraft.getMinecraft();
         //RenderBox
@@ -63,5 +63,18 @@ public class ArkInGame {
         float healthLength = percent*healthProgressLength;
         float healthBarX = healthX - healthLength;
         RenderUtil.drawRect(healthBarX,healthProgressBottom-4 ,healthBarX + healthLength,healthProgressBottom-1,Color.RED.getRGB());
+    }
+    private static boolean isDanger(){
+        Minecraft mc =Minecraft.getMinecraft();
+        return mc.player.getDataManager().get(SourceStoneCore.RADIATION)>6;
+    }
+    private static String danger(){
+        String s;
+        if (isDanger()){
+            s = "Danger";
+        }else {
+            s = "safe";
+        }
+        return s;
     }
 }

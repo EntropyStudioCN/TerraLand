@@ -34,7 +34,7 @@ public class SourceStoneCore extends Block implements IHasModel, ITileEntityProv
         setTranslationKey("soucestonecore");
         setRegistryName("soucestonecore");
         setCreativeTab(TabArkAddition3Block0.TABARKADDITION3BLOCK0);
-        setLightLevel(15F);
+        setLightLevel(1.0F);
         setLightOpacity(1);
         setHardness(70F);
         setSoundType(SoundType.GLASS);
@@ -43,6 +43,7 @@ public class SourceStoneCore extends Block implements IHasModel, ITileEntityProv
         ModBlocks.BLOCKS.add(this);
         ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
     }
+
     @Override
     public boolean hasTileEntity(IBlockState state) {
         return true;

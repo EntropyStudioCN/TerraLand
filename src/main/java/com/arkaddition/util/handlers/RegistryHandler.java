@@ -3,6 +3,7 @@ package com.arkaddition.util.handlers;
 
 import com.arkaddition.blocks.SourceStoneCore;
 import com.arkaddition.blocks.TileEnity.SSCTileEnity;
+import com.arkaddition.commands.TerraLandCommand;
 import com.arkaddition.init.ModBlocks;
 import com.arkaddition.init.ModItems;
 import com.arkaddition.util.IHasModel;
@@ -12,7 +13,10 @@ import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import net.minecraftforge.fml.common.event.FMLServerAboutToStartEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -41,7 +45,11 @@ public class RegistryHandler {
         // 第二个参数的要求和方块的注册名一致。
         GameRegistry.registerTileEntity(SSCTileEnity.class, new ResourceLocation ("arkaddition", "soucestonecore"));
     }
-    
+
+    @Mod.EventHandler
+    public static void onFMLServerStartingEvent(FMLServerStartingEvent event){
+        event.registerServerCommand(new TerraLandCommand());
+    }
     @SubscribeEvent
     public static void onModelRegister(ModelRegistryEvent event) {
     	

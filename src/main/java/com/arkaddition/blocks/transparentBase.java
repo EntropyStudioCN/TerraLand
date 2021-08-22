@@ -6,6 +6,7 @@ import com.arkaddition.init.ModBlocks;
 import com.arkaddition.init.ModItems;
 import com.arkaddition.util.IHasModel;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockGlass;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -34,8 +35,8 @@ public class transparentBase extends Block implements IHasModel {
         ModItems.ITEMS.add(new ItemBlock (this).setRegistryName(this.getRegistryName()));
     }
 
-    @SideOnly (Side.CLIENT)
-    public BlockRenderLayer getBlockLayer(){
+    @SideOnly(Side.CLIENT)
+    public BlockRenderLayer getRenderLayer() {
         return BlockRenderLayer.TRANSLUCENT;
     }
 

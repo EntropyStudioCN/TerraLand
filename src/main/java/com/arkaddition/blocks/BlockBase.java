@@ -1,5 +1,6 @@
 package com.arkaddition.blocks;
 
+import com.arkaddition.creativetab.TabArkAddition3Block0;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -14,12 +15,12 @@ import com.arkaddition.init.ModItems;
 import com.arkaddition.util.IHasModel;
 
 public class BlockBase extends Block implements IHasModel{
-	public BlockBase(String name, Material material, CreativeTabs tab,SoundType sound,float hard,String Tool,int Level)
+	public BlockBase(String name, Material material,SoundType sound,float hard,String Tool,int Level)
     {
         super(material);
         setTranslationKey(name);
         setRegistryName(name);
-        setCreativeTab(tab);
+        setCreativeTab(TabArkAddition3Block0.TABARKADDITION3BLOCK0);
         setSoundType(sound);
         setHardness(hard);
         setHarvestLevel (Tool,Level);

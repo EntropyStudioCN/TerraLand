@@ -9,10 +9,14 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -24,7 +28,6 @@ public class transparentBase extends Block implements IHasModel {
         setTranslationKey(name);
         setRegistryName(name);
         setCreativeTab(TabArkAddition3Block0.TABARKADDITION3BLOCK0);
-        setLightOpacity(0);
         setSoundType(sound);
         setHardness(hard);
         setHarvestLevel (Tool,Level);
@@ -38,6 +41,12 @@ public class transparentBase extends Block implements IHasModel {
     @SideOnly(Side.CLIENT)
     public BlockRenderLayer getRenderLayer() {
         return BlockRenderLayer.TRANSLUCENT;
+    }
+
+    @Override // Forge patch 的方法
+    public boolean canSilkHarvest(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
+        // 这个方法决定了精准采集有没有效果。
+        return false;
     }
 
     @Override

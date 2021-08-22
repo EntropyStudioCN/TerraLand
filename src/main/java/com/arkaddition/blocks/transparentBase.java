@@ -12,6 +12,8 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.BlockRenderLayer;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class transparentBase extends Block implements IHasModel {
     public transparentBase(String name, Material material, SoundType sound, float hard, String Tool, int Level)
@@ -21,7 +23,7 @@ public class transparentBase extends Block implements IHasModel {
         setTranslationKey(name);
         setRegistryName(name);
         setCreativeTab(TabArkAddition3Block0.TABARKADDITION3BLOCK0);
-        setLightOpacity(1);
+        setLightOpacity(0);
         setSoundType(sound);
         setHardness(hard);
         setHarvestLevel (Tool,Level);
@@ -30,6 +32,11 @@ public class transparentBase extends Block implements IHasModel {
 
         ModBlocks.BLOCKS.add(this);
         ModItems.ITEMS.add(new ItemBlock (this).setRegistryName(this.getRegistryName()));
+    }
+
+    @SideOnly (Side.CLIENT)
+    public BlockRenderLayer getBlockLayer(){
+        return BlockRenderLayer.TRANSLUCENT;
     }
 
     @Override

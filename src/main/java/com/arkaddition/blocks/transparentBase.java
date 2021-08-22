@@ -15,7 +15,9 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -27,6 +29,7 @@ public class transparentBase extends Block implements IHasModel {
 
         setTranslationKey(name);
         setRegistryName(name);
+        setLightOpacity(1);
         setCreativeTab(TabArkAddition3Block0.TABARKADDITION3BLOCK0);
         setSoundType(sound);
         setHardness(hard);
@@ -43,11 +46,44 @@ public class transparentBase extends Block implements IHasModel {
         return BlockRenderLayer.TRANSLUCENT;
     }
 
-    @Override // Forge patch 的方法
-    public boolean canSilkHarvest(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
-        // 这个方法决定了精准采集有没有效果。
+
+//see to del -by IAX
+    public boolean isFullCube(IBlockState state)
+    {
         return false;
     }
+    public boolean isOpaqueCube(IBlockState state)
+    {
+        return false;
+    }
+
+    @SideOnly(Side.CLIENT)
+    public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side)
+    {
+        IBlockState iblockstate = blockAccess.getBlockState(pos.offset(side));
+        Block block = iblockstate.getBlock();
+
+        if (blockState != iblockstate)
+        {
+            return true;
+        }
+
+        if (block == this)
+        {
+            return false;
+        }
+
+        return super.shouldSideBeRendered(blockState, blockAccess, pos, side);
+    }
+//until here
+
+
+
+    @Override
+    public boolean canSilkHarvest(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
+        return false;
+    }
+
 
     @Override
     public void registerModels() {

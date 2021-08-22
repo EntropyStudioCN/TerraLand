@@ -1,5 +1,6 @@
 package com.arkaddition;
 
+import com.arkaddition.commands.TerraLandCommand;
 import com.arkaddition.entity.EntityInit;
 import com.arkaddition.entity.render.ArkRenderManager;
 import com.arkaddition.event.ArkEventHandler;
@@ -7,6 +8,7 @@ import com.arkaddition.event.S_stone;
 import com.arkaddition.world.GenOreArks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -17,6 +19,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 import com.arkaddition.proxy.CommonProxy;
 import com.arkaddition.util.Reference;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import software.bernie.geckolib3.GeckoLib;
 
@@ -52,5 +55,8 @@ public class Main {
     {
 
     }
-
+    @Mod.EventHandler
+    public static void onFMLServerStartingEvent(FMLServerStartingEvent event){
+        event.registerServerCommand(new TerraLandCommand());
+    }
 }

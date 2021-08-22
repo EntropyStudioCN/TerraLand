@@ -30,7 +30,8 @@ public class TerraLandCommand extends CommandBase {
                     if (strings[1].equalsIgnoreCase("thorn")){
                         if (!(strings.length > 2)){
                             iCommandSender.sendMessage(new TextComponentString("Spawn SourceStoneThorn with random"));
-                            new SourceStoneThorn().spawn(new BlockPos(iCommandSender.getCommandSenderEntity().posX,iCommandSender.getCommandSenderEntity().posY,iCommandSender.getCommandSenderEntity().posZ));
+                            new SourceStoneThorn().spawn(new BlockPos(iCommandSender.getCommandSenderEntity().posX,iCommandSender.getCommandSenderEntity().posY,iCommandSender.getCommandSenderEntity().posZ),iCommandSender.getCommandSenderEntity(),
+                                    iCommandSender.getEntityWorld());
                         }
                     }
                 }else {

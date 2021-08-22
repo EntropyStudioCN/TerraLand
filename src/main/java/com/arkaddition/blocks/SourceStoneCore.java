@@ -22,6 +22,8 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -63,6 +65,12 @@ public class SourceStoneCore extends Block implements IHasModel, ITileEntityProv
     public void updateTick(World p_180650_1_, BlockPos p_180650_2_, IBlockState p_180650_3_, Random p_180650_4_) {
         //WARN: Maybe it will make lag
     }
+    @Override // Forge patch 的方法
+    public boolean canSilkHarvest(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
+        // 这个方法决定了精准采集有没有效果。
+        return false;
+    }
+
 
     @Nullable
     @Override

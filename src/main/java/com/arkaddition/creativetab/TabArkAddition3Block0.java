@@ -14,7 +14,7 @@ public class TabArkAddition3Block0 {
         @Override
         @SideOnly(Side.CLIENT)
         public ItemStack createIcon() {
-            return new ItemStack(ModItems.INCANDESCENT_ALLOY_BLOCK);
+            return new ItemStack(ModBlocks.OREDIFFERENTIRON);
         }
 
         //@SideOnly(Side.CLIENT)

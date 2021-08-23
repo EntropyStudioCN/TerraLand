@@ -46,10 +46,6 @@ public class RegistryHandler {
         GameRegistry.registerTileEntity(SSCTileEnity.class, new ResourceLocation ("arkaddition", "soucestonecore"));
     }
 
-    @Mod.EventHandler
-    public static void onFMLServerStartingEvent(FMLServerStartingEvent event){
-        event.registerServerCommand(new TerraLandCommand());
-    }
     @SubscribeEvent
     public static void onModelRegister(ModelRegistryEvent event) {
     	

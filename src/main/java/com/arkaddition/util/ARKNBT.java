@@ -1,5 +1,4 @@
 package com.arkaddition.util;
-
 import com.arkaddition.util.ARKNBTDef.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;

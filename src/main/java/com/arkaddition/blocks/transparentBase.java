@@ -60,24 +60,7 @@ public class transparentBase extends Block implements IHasModel {
         return false;
     }
 
-    @SideOnly(Side.CLIENT)
-    public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side)
-    {
-        IBlockState iblockstate = blockAccess.getBlockState(pos.offset(side));
-        Block block = iblockstate.getBlock();
 
-        if (blockState != iblockstate)
-        {
-            return true;
-        }
-
-        if (block == this)
-        {
-            return false;
-        }
-
-        return super.shouldSideBeRendered(blockState, blockAccess, pos, side);
-    }
 //until here
 
 

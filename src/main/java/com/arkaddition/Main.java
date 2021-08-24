@@ -5,10 +5,12 @@ import com.arkaddition.entity.EntityInit;
 import com.arkaddition.entity.render.ArkRenderManager;
 import com.arkaddition.event.ArkEventHandler;
 import com.arkaddition.event.S_stone;
+import com.arkaddition.init.ModSpawn;
+import com.arkaddition.proxy.CommonProxy;
+import com.arkaddition.util.Reference;
 import com.arkaddition.world.GenOreArks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -16,9 +18,6 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-
-import com.arkaddition.proxy.CommonProxy;
-import com.arkaddition.util.Reference;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import software.bernie.geckolib3.GeckoLib;
@@ -40,6 +39,7 @@ public class Main {
         GameRegistry.registerWorldGenerator(new GenOreArks(),3);
     }
 
+
     @EventHandler
     public static void Init(FMLInitializationEvent event)
     {
@@ -48,6 +48,9 @@ public class Main {
         ArkRenderManager.register(renderManager);
         new ArkEventHandler();
         new S_stone();
+
+        //添加注册信息
+        ModSpawn.registerSpawnList();
     }
 
     @EventHandler

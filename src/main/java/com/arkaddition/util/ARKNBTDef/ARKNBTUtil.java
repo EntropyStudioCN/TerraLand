@@ -2,13 +2,10 @@ package com.arkaddition.util.ARKNBTDef;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
-import java.util.*;
 
 public class ARKNBTUtil {
     public static NBTTagCompound getNBT(ItemStack stack)
@@ -43,8 +40,7 @@ public class ARKNBTUtil {
     public static boolean StackHasKey(ItemStack stack, String key) {
         return !(stack.isEmpty() || !getNBT(stack).hasKey(key));
     }
-
-    //Boolean
+        //Boolean
     public static boolean SetBoolean(ItemStack stack, String key, boolean value)
     {
         NBTTagCompound nbt = getNBT(stack);

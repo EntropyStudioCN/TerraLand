@@ -3,15 +3,13 @@ package al.nya.arkgui.gui;
 import al.nya.arkgui.utils.RenderUtil;
 import com.arkaddition.Main;
 import com.arkaddition.blocks.SourceStoneCore;
+import com.arkaddition.util.ARKNBTDef.ARKNBTDef;
+import com.arkaddition.util.ARKNBTDef.ARKNBTUtil;
 import com.arkaddition.util.Reference;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.DataSerializers;
-import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.client.GuiIngameForge;
@@ -35,6 +33,7 @@ public class ArkInGame {
             guiIn.drawString(mc.fontRenderer,"Player Health:"+mc.player.getHealth(),6,35,Color.WHITE.getRGB());
             guiIn.drawString(mc.fontRenderer,"Player Food Level:"+mc.player.getFoodStats().getFoodLevel(),6,45,Color.WHITE.getRGB());
             guiIn.drawString(mc.fontRenderer,"Client Radiation:"+(mc.player.getDataManager().get(SourceStoneCore.RADIATION)) +"("+danger()+")",6,55,Color.WHITE.getRGB());
+            guiIn.drawString(mc.fontRenderer,"Client Strength:"+(ARKNBTUtil.GetInt(mc.player, ARKNBTDef.ARK_STRENGTH.getName(), -1)) ,6,65,Color.WHITE.getRGB());
             //guiIn.drawString(mc.fontRenderer,"Core Distance:"+mc.player.getDataManager().get(SourceStoneCore.DISTANCE) +"("+danger()+")",6,65,Color.WHITE.getRGB());
         }
         Minecraft mc = Minecraft.getMinecraft();

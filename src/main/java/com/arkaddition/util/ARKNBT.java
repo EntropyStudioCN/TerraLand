@@ -25,7 +25,7 @@ public class ARKNBT {
     {
         if (tag != null)
         {
-            ArkJob  = tag.getString (ARKNBTDef.ARK_JOB);
+            ArkJob  = tag.getString (ARKNBTDef.ARK_JOB.getName());
         }
     }
 
@@ -36,7 +36,7 @@ public class ARKNBT {
             tag = new NBTTagCompound();
         }
 
-        tag.setString (ARKNBTDef.ARK_JOB, ArkJob);
+        tag.setString (ARKNBTDef.ARK_JOB.getName(), ArkJob);
     }
 
     public NBTTagCompound getBasic()

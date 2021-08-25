@@ -4,6 +4,7 @@ import com.arkaddition.commands.TerraLandCommand;
 import com.arkaddition.entity.EntityInit;
 import com.arkaddition.entity.render.ArkRenderManager;
 import com.arkaddition.event.ArkEventHandler;
+import com.arkaddition.event.EntityEvents;
 import com.arkaddition.event.S_stone;
 import com.arkaddition.init.ModSpawn;
 import com.arkaddition.proxy.CommonProxy;
@@ -11,6 +12,7 @@ import com.arkaddition.util.Reference;
 import com.arkaddition.world.GenOreArks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -48,7 +50,7 @@ public class Main {
         ArkRenderManager.register(renderManager);
         new ArkEventHandler();
         new S_stone();
-
+        MinecraftForge.EVENT_BUS.register(new EntityEvents());
         //添加注册信息
         ModSpawn.registerSpawnList();
     }

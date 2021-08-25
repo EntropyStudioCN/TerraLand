@@ -1,14 +1,65 @@
-#tab
-itemGroup.tabarkaddition=��������(����)
-itemGroup.tabarkaddition2=��������(�һ���)
-itemGroup.tabarkaddition1=��������(����)
+﻿item.alcohol_reverse.name=扭转醇
+item.alcohol_white_horse.name=白马醇
+item.bipolar_nanosheet.name=双极纳米片
+item.crystal_circuit.name=晶体电路
+item.crystal_electronic_unit.name=晶体电子单元
+item.crystal_element.name=晶体元件
+item.device.name=装置
+item.device_broken.name=破损装置
+item.device_change.name=改量装置
+item.device_new.name=全新装置
+item.furniture_parts.name=家具零件
+item.gel.name=凝胶
+item.gel_polymer.name=聚合凝胶
+item.grinding_stone.name=研磨石
+item.grinding_stone_5water.name=五水研磨石
+item.heteroiron_block.name=异铁块
+item.heteroiron_fragments.name=异铁碎片
+item.heteroiron_group.name=异铁组
+item.heteroiron_iron.name=异铁
+item.incandescent_alloy.name=i炽合金
+item.incandescent_alloy_block.name=炽合金块
+item.ketone_agglutination.name=酮凝集
+item.ketone_agglutination_group.name=酮凝集组
+item.ketone_array.name=酮列阵
+item.ketone_dual.name=双酮
+item.loong_door_coin.name=龙门币
+item.manganese_ore.name=三水锰矿
+item.manganese_ore_light.name=轻锰矿
+item.polyester.name=聚酸酯
+item.polyester_block.name=聚酸酯块
+item.polyester_group.name=聚酸酯组
+item.polymerizing_agent.name=聚合剂
+item.polyster_material.name=酯原料
+item.pure_gold.name=赤金
+item.rma70_12.name=RMA70_12
+item.rma70_24.name=RMA70_24
+item.source_jade.name=至纯源石
+item.source_jade_fragment.name=源石碎片
+item.source_rock .name=源岩
+item.source_rock_pure.name=提纯源岩
+item.source_rock_solid.name=固源岩
+item.source_rock_solid_group.name=固原岩组
+item.steel_d32.name=D32钢
+item.sugar_agglomerates.name=糖聚块
+item.sugar_ark.name=糖
+item.sugar_group.name=糖组
+item.sugar_substitute.name=代糖
+item.synthetic_jade.name=合成玉
+item.tornadoo.name=龙卷风
+item.tornadoo_sandstrom.name=沙尘暴
 
-#items
-#item.Originiums.name=����Դʯ
+#tab
+itemGroup.tabarkaddition=泰拉大地(材料)
+itemGroup.tabarkaddition2=泰拉大地(兑换物)
+itemGroup.tabarkaddition1=泰拉大地(其他)
+itemGroup.TabArkAddition3Block0=泰拉大地(方块)
 #FOOD
-item.two_burger_set.name=˫�˺�����
-item.peterheim_honey_biscuits.name=�˵º�ķ��������
-item.gaint_hoof_energy_drink.name=������������
-item.salted_egg_yolk_chocolate.name=�̵���ζ�ɿ���
-item.dehydrated_cactus.name=��ˮ�����Ƹ�
-item.baklava.name=�۱�
+item.two_burger_set.name=双人汉堡餐
+item.peterheim_honey_biscuits.name=彼德海姆热销饼干
+item.gaint_hoof_energy_drink.name=丰蹄能量饮料
+item.salted_egg_yolk_chocolate.name=咸蛋黄味巧克力
+item.dehydrated_cactus.name=脱水仙人掌干
+item.baklava.name=蜜饼
+
+

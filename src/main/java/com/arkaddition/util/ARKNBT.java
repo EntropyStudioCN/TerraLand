@@ -1,7 +1,8 @@
 package com.arkaddition.util;
-import com.arkaddition.util.ARKNBTDef.*;
+import com.arkaddition.util.ARKNBTDef.ARKNBTDef;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
+
 
 public class ARKNBT {
     public int ArkStrength;

@@ -30,8 +30,16 @@ public class GenOreArks implements IWorldGenerator {
         generateOre(ModBlocks.OREDIFFERENTIRON.getDefaultState(),world,random,chunkX*16,chunkZ*16,1,50,random.nextInt(4)+2,random.nextInt(10)+5);
 
         //cu
-        generateOre(ModBlocks.ORECU.getDefaultState(),world,random,chunkX*16,chunkZ*16,1,50,random.nextInt(8)+2,random.nextInt(30)+20);
+        generateOre(ModBlocks.ORECU.getDefaultState(),world,random,chunkX*16,chunkZ*16,1,50,random.nextInt(8)+2,random.nextInt(35)+20);
+        //锡
+        generateOre(ModBlocks.TIN_ORE.getDefaultState(),world,random,chunkX*16,chunkZ*16,1,40,random.nextInt(8)+2,random.nextInt(35)+20);
+        //银
+        generateOre(ModBlocks.LEAD_ORE.getDefaultState(),world,random,chunkX*24,chunkZ*24,1,30,random.nextInt(10)+1,random.nextInt(25)+15);
 
+        //锰
+        generateOre (ModBlocks.MANGANESE_ORE.getDefaultState(),world,random,chunkX*32,chunkZ*32,1,30,random.nextInt(5)+1,random.nextInt(15)+10);
+        //铅
+        generateOre(ModBlocks.LEAD_ORE.getDefaultState(),world,random,chunkX*24,chunkZ*24,1,40,random.nextInt(8)+1,random.nextInt(20)+15);
     }
     private void generateOre(IBlockState ore,World world,Random random,int x,int z,int minY,int maxY,int size,int chances)
     {

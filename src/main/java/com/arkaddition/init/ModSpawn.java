@@ -54,8 +54,8 @@ public class ModSpawn {
             //Example Spawn
             // add (biome,ModConfig. SPAWN_CONF.SPAWN_TAINTER,EntityMoroonTainter. class，1，4);
             //生物在什么地形上生成,生成相关配置(生成率，数值越大越好),生物.class文件, 一次生成最少数量,  最大数量
-            add(biome, 2000, SourceStoneBugEntity.class, 1, 4);
-            //为了方便演示，我们调成200，实际值调在(1~10)即可
+            add(biome, 8, SourceStoneBugEntity.class, 1, 4);
+            //weight实际值调在(1~10)即可
         }
     }
 

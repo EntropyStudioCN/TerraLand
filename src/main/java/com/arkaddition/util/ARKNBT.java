@@ -4,14 +4,19 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 
 public class ARKNBT {
-    public String ArkJob;
-
+    public int ArkStrength;
+    //public boolean isEarth;
+    //public boolean isSky;
 
     private final NBTTagCompound basic;
 
     public ARKNBT()
     {
-        ArkJob  = "Empty";
+        ArkStrength = 0;
+
+        //isEarth = false;
+        //isSky = false;
+
         basic = new NBTTagCompound();
     }
 
@@ -25,7 +30,10 @@ public class ARKNBT {
     {
         if (tag != null)
         {
-            ArkJob  = tag.getString (ARKNBTDef.ARK_JOB.getName());
+            ArkStrength = tag.getInteger(ARKNBTDef.ARK_STRENGTH.getName ());
+
+            //isEarth = tag.getBoolean(IDLNBTDef.IS_EARTH);
+            //isSky = tag.getBoolean(IDLNBTDef.IS_SKY);
         }
     }
 
@@ -36,7 +44,9 @@ public class ARKNBT {
             tag = new NBTTagCompound();
         }
 
-        tag.setString (ARKNBTDef.ARK_JOB.getName(), ArkJob);
+        tag.setInteger(ARKNBTDef.ARK_STRENGTH.getName (), ArkStrength);
+        //tag.setBoolean(IDLNBTDef.IS_EARTH, isEarth);
+        //tag.setBoolean(IDLNBTDef.IS_SKY, isSky);
     }
 
     public NBTTagCompound getBasic()
@@ -51,7 +61,12 @@ public class ARKNBT {
     {
         writeToBasic(basic);
     }
-////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //PlayerData
+    //--PERSISTED_NBT_TAG
+    //  --ARK
+    //    --KILL_COUNT,etc
+
 
     public static NBTTagCompound getTagSafe(NBTTagCompound tag, String key) {
         if(tag == null) {
@@ -64,24 +79,87 @@ public class ARKNBT {
     public static NBTTagCompound getPlyrIdlTagSafe(EntityPlayer player) {
         NBTTagCompound playerData = player.getEntityData();
         NBTTagCompound data = getTagSafe(playerData, EntityPlayer.PERSISTED_NBT_TAG);
-        NBTTagCompound Ark_data = getTagSafe(data,"ARKADDITOIN");
+        NBTTagCompound ark_data = getTagSafe(data, "ARK");
 
-        return Ark_data;
+        return ark_data;
     }
 
+    public static NBTTagCompound getPlayerARKTagGroupSafe(EntityPlayer player, String key) {
+        return getPlyrIdlTagSafe(player).getCompoundTag(key);
+    }
 
-    public static String getPlayerIdeallandStrSafe(EntityPlayer player, String key) {
+    public static int[] getPlayerARKIntArraySafe(EntityPlayer player, String key) {
+        return getPlyrIdlTagSafe(player).getIntArray(key);
+    }
+
+    public static int getPlayerARKIntSafe(EntityPlayer player, String key) {
+        return getPlyrIdlTagSafe(player).getInteger(key);
+    }
+    public static float getPlayerARKFloatSafe(EntityPlayer player, String key) {
+        return getPlyrIdlTagSafe(player).getFloat(key);
+    }
+    public static double getPlayerARKDoubleSafe(EntityPlayer player, String key) {
+        return getPlyrIdlTagSafe(player).getDouble(key);
+    }
+    public static boolean getPlayerARKBoolSafe(EntityPlayer player, String key) {
+        return getPlyrIdlTagSafe(player).getBoolean(key);
+    }
+    public static String getPlayerARKStrSafe(EntityPlayer player, String key) {
         return getPlyrIdlTagSafe(player).getString(key);
     }
-////////////////////////////////////////////////////////////////////////////////////////////////
-    public static void setPlayerArkJob(EntityPlayer player, String key, String value) {
+
+    public static void setPlayerARKTagSafe(EntityPlayer player, String key, int value) {
         NBTTagCompound playerData = player.getEntityData();
         NBTTagCompound data = getTagSafe(playerData, EntityPlayer.PERSISTED_NBT_TAG);
-        NBTTagCompound Ark_data = getPlyrIdlTagSafe(player);
+        NBTTagCompound ark_data = getPlyrIdlTagSafe(player);
 
-        Ark_data.setString (key, value);
+        ark_data.setInteger(key, value);
 
-        data.setTag("ARKADDITION", Ark_data);
+        data.setTag("ARK", ark_data);
+        playerData.setTag(EntityPlayer.PERSISTED_NBT_TAG, data);
+    }
+
+    public static void setPlayerARKTagSafe(EntityPlayer player, String key, int[] value) {
+        NBTTagCompound playerData = player.getEntityData();
+        NBTTagCompound data = getTagSafe(playerData, EntityPlayer.PERSISTED_NBT_TAG);
+        NBTTagCompound ark_data = getPlyrIdlTagSafe(player);
+
+        ark_data.setIntArray(key, value);
+
+        data.setTag("ARK", ark_data);
+        playerData.setTag(EntityPlayer.PERSISTED_NBT_TAG, data);
+    }
+
+    public static void setPlayerARKTagSafe(EntityPlayer player, String key, double value) {
+        NBTTagCompound playerData = player.getEntityData();
+        NBTTagCompound data = getTagSafe(playerData, EntityPlayer.PERSISTED_NBT_TAG);
+        NBTTagCompound ark_data = getPlyrIdlTagSafe(player);
+
+        ark_data.setDouble(key, value);
+
+        data.setTag("ARK", ark_data);
+        playerData.setTag(EntityPlayer.PERSISTED_NBT_TAG, data);
+    }
+
+    public static void setPlayerARKTagSafe(EntityPlayer player, String key, boolean value) {
+        NBTTagCompound playerData = player.getEntityData();
+        NBTTagCompound data = getTagSafe(playerData, EntityPlayer.PERSISTED_NBT_TAG);
+        NBTTagCompound ark_data = getPlyrIdlTagSafe(player);
+
+        ark_data.setBoolean(key, value);
+
+        data.setTag("ARK", ark_data);
+        playerData.setTag(EntityPlayer.PERSISTED_NBT_TAG, data);
+    }
+
+    public static void setPlayerARKTagSafe(EntityPlayer player, String key, String value) {
+        NBTTagCompound playerData = player.getEntityData();
+        NBTTagCompound data = getTagSafe(playerData, EntityPlayer.PERSISTED_NBT_TAG);
+        NBTTagCompound ark_data = getPlyrIdlTagSafe(player);
+
+        ark_data.setString(key, value);
+
+        data.setTag("ARK", ark_data);
         playerData.setTag(EntityPlayer.PERSISTED_NBT_TAG, data);
     }
 }

@@ -9,10 +9,13 @@ import com.arkaddition.event.S_stone;
 import com.arkaddition.init.ModSpawn;
 import com.arkaddition.proxy.CommonProxy;
 import com.arkaddition.util.Reference;
+import com.arkaddition.util.nbt.StrengthCapability;
+import com.arkaddition.util.nbt.StrengthContainer;
 import com.arkaddition.world.GenOreArks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -37,6 +40,8 @@ public class Main {
     @EventHandler
     public static void PreInit(FMLPreInitializationEvent event)
     {
+        CapabilityManager.INSTANCE.register(StrengthContainer.class,new StrengthCapability(), StrengthContainer::new);
+
         EntityInit.registerEntities();
         GameRegistry.registerWorldGenerator(new GenOreArks(),3);
     }

@@ -1,9 +1,11 @@
 package com.arkaddition.init;
 
 import com.arkaddition.blocks.*;
+import com.arkaddition.creativetab.ArkItemGroups;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.item.ItemStack;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +32,12 @@ public class ModBlocks {
 
     public static final Block ORIROCK = new BlockBase ("orirock",Material.IRON,SoundType.STONE,3.0f,"pickaxe",1);
 
+    //-------------------------------------------------------------------
+    //At the bottom of all codes on this page, it's an initialization of the icon of every item group.
+    //And DO NOT add any code about item register after this LINE.
+    static {
+        ArkItemGroups.Blocks.setIcon(new ItemStack(ModBlocks.OREDIFFERENTIRON));
+    }
 
 }
 

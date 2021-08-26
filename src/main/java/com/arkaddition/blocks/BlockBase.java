@@ -1,5 +1,6 @@
 package com.arkaddition.blocks;
 
+import com.arkaddition.creativetab.ArkItemGroups;
 import com.arkaddition.creativetab.TabArkAddition3Block0;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -20,14 +21,14 @@ public class BlockBase extends Block implements IHasModel{
         super(material);
         setTranslationKey(name);
         setRegistryName(name);
-        setCreativeTab(TabArkAddition3Block0.TABARKADDITION3BLOCK0);
+        setCreativeTab(ArkItemGroups.Blocks);
         setSoundType(sound);
         setHardness(hard);
         setHarvestLevel (Tool,Level);
 
 
         ModBlocks.BLOCKS.add(this);
-        ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
+        ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(name));
     }
 
     @Override

@@ -1,24 +1,24 @@
 package com.arkaddition.init;
 
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
+import com.arkaddition.creativetab.ArkItemGroups;
 import com.arkaddition.items.*;
 
-
-import com.arkaddition.Main;
 
 import com.arkaddition.creativetab.TabArkAddition1;
 
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
+import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 
 
 public class ModItems {
-	public static final List<Item> ITEMS = new ArrayList<Item>();
+	public static final List<Item> ITEMS = new LinkedList<>();
 	
 	
 	
@@ -101,6 +101,13 @@ public class ModItems {
     public static final Item SALTED_EGG_YOLK_CHOCOLATE = new FoodBase0("salted_egg_yolk_chocolate", 3, 4,false,TabArkAddition1.TABARKADDITION1);
     public static final Item TWO_BURGER_SET = new FoodBase0("two_burger_set", 22,10,false,TabArkAddition1.TABARKADDITION1);
 
-    
+	//-------------------------------------------------------------------
+	//At the bottom of all codes on this page, it's an initialization of the icon of every item group.
+	//And DO NOT add any code about item register after this LINE.
+    static {
+		ArkItemGroups.Materials.setIcon(new ItemStack(INCANDESCENT_ALLOY_BLOCK));
+		ArkItemGroups.Exchanges.setIcon(new ItemStack(BAKLAVA));
+		ArkItemGroups.Others.setIcon(new ItemStack(SOURCE_JADE));
+	}
 }
 

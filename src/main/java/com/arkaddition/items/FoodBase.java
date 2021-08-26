@@ -13,13 +13,6 @@ public class FoodBase extends ItemFood implements IHasModel {
         setRegistryName(name);
         ModItems.ITEMS.add(this);
     }
-    public FoodBase(String name, int amount, float saturation, boolean isWolfFood, CreativeTabs tab) {
-        super(amount, saturation, isWolfFood);
-        setTranslationKey(name);
-        setRegistryName(name);
-        super.setCreativeTab(tab);
-        ModItems.ITEMS.add(this);
-    }
     @Override
     public void registerModels() {
         Main.proxy.registerItemRenderer(this, 0, "inventory");

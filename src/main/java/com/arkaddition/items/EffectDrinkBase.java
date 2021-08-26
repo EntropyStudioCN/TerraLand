@@ -1,54 +1,43 @@
 package com.arkaddition.items;
 
 import com.arkaddition.util.IHasModel;
-
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class EffectDrinkBase extends DrinkerBase implements IHasModel {
-    PotionEffect effect1,effect2,effect3,effect4,effect5;
-    public EffectDrinkBase(String name, int amount, float saturation, boolean iswolfFood, CreativeTabs tab, PotionEffect effect1, PotionEffect effect2, PotionEffect effect3
-            , PotionEffect effect4, PotionEffect effect5) {
-        super(name, amount, saturation, iswolfFood, tab);
+import javax.annotation.Nonnull;
+import java.util.Arrays;
 
+public class EffectDrinkBase extends DrinkerBase implements IHasModel {
+    private final PotionEffect[] allEffects;
+
+    public EffectDrinkBase(String name, int amount, float saturation, boolean isWolfFood, PotionEffect... effects) {
+        super(name, amount, saturation, isWolfFood);
+        if (effects.length > 5) {
+            this.allEffects = Arrays.copyOf(effects, 5);
+        } else {
+            this.allEffects = effects;
+        }
         //setAlwaysEdible();
-        this.effect1=effect1;
-        this.effect2=effect2;
-        this.effect3=effect3;
-        this.effect4=effect4;
-        this.effect5=effect5;
     }
+
     @Override
-    protected void onFoodEaten(ItemStack stack,World worldIn, EntityPlayer player) {
-        if (!worldIn.isRemote)
-        {
-            if (effect1.getPotion()!=null) {
-                player.addPotionEffect(new PotionEffect(effect1.getPotion(), effect1.getDuration(), effect1.getAmplifier(), effect1.getIsAmbient(), effect1.doesShowParticles()));
-            }
-            if (effect2.getPotion()!=null) {
-                player.addPotionEffect(new PotionEffect(effect2.getPotion(), effect2.getDuration(), effect2.getAmplifier(), effect2.getIsAmbient(), effect2.doesShowParticles()));
-            }
-            if (effect3.getPotion()!=null) {
-                player.addPotionEffect(new PotionEffect(effect3.getPotion(), effect3.getDuration(), effect3.getAmplifier(), effect3.getIsAmbient(), effect3.doesShowParticles()));
-            }
-            if (effect4.getPotion()!=null) {
-                player.addPotionEffect(new PotionEffect(effect4.getPotion(), effect4.getDuration(), effect4.getAmplifier(), effect4.getIsAmbient(), effect4.doesShowParticles()));
-            }
-            if (effect5.getPotion()!=null) {
-                player.addPotionEffect(new PotionEffect(effect5.getPotion(), effect5.getDuration(), effect5.getAmplifier(), effect5.getIsAmbient(), effect5.doesShowParticles()));
+    protected void onFoodEaten(@Nonnull ItemStack stack, World worldIn, @Nonnull EntityPlayer player) {
+        if (!worldIn.isRemote) {
+            for (PotionEffect effect : allEffects) {
+                player.addPotionEffect(
+                        new PotionEffect(
+                                effect.getPotion(), effect.getDuration(), effect.getAmplifier(), effect.getIsAmbient(), effect.doesShowParticles()
+                        ));
             }
         }
     }
 
     @SideOnly(Side.CLIENT)
-    public boolean hasEffect( ItemStack stack)
-    {
+    public boolean hasEffect(@Nonnull ItemStack stack) {
         return true;
     }
 }

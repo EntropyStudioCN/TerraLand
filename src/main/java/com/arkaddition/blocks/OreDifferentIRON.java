@@ -22,7 +22,6 @@ public class OreDifferentIRON extends BlockBase {
         super(name,material,sound,hard,Tool,level);
 
         setResistance(15.0f);
-        setCreativeTab (ArkItemGroups.Blocks);
     }
 
 

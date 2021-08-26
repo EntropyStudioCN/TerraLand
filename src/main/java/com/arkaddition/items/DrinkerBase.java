@@ -15,11 +15,10 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 
 public class DrinkerBase extends ItemFood implements IHasModel{
-    public DrinkerBase(String name, int amount, float saturation, boolean iswolfFood, CreativeTabs tab) {
+    public DrinkerBase(String name, int amount, float saturation, boolean iswolfFood) {
         super( amount, saturation, iswolfFood );
         setTranslationKey(name);
         setRegistryName(name);
-        setCreativeTab(tab);
 
         ModItems.ITEMS.add(this);
     }

@@ -18,8 +18,6 @@ public class OreCu extends BlockBase {
 
         setResistance(15.0f);
         setHarvestLevel("pickaxe", 2);
-        setCreativeTab (ArkItemGroups.Blocks);
-
     }
 
 

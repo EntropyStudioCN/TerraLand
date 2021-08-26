@@ -1,7 +1,7 @@
 package com.arkaddition.blocks;
 
 import com.arkaddition.Main;
-import com.arkaddition.creativetab.TabArkAddition3Block0;
+import com.arkaddition.creativetab.ArkItemGroups;
 import com.arkaddition.init.ModBlocks;
 import com.arkaddition.init.ModItems;
 import com.arkaddition.util.IHasModel;
@@ -31,7 +31,7 @@ public class transparentBase extends Block implements IHasModel {
         setTranslationKey(name);
         setRegistryName(name);
         setLightOpacity(1);
-        setCreativeTab(TabArkAddition3Block0.TABARKADDITION3BLOCK0);
+        setCreativeTab(ArkItemGroups.Blocks);
         setSoundType(sound);
         setHardness(hard);
         setHarvestLevel (Tool,Level);

@@ -2,17 +2,15 @@ package com.arkaddition.blocks;
 
 import com.arkaddition.Main;
 import com.arkaddition.blocks.TileEnity.SSCTileEnity;
-import com.arkaddition.creativetab.TabArkAddition3Block0;
+import com.arkaddition.creativetab.ArkItemGroups;
 import com.arkaddition.init.ModBlocks;
 import com.arkaddition.init.ModItems;
 import com.arkaddition.util.IHasModel;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockContainer;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -22,8 +20,6 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -35,7 +31,7 @@ public class SourceStoneCore extends Block implements IHasModel, ITileEntityProv
         super(Material.IRON);
         setTranslationKey("soucestonecore");
         setRegistryName("soucestonecore");
-        setCreativeTab(TabArkAddition3Block0.TABARKADDITION3BLOCK0);
+        setCreativeTab(ArkItemGroups.Blocks);
         setLightLevel(1.0F);
         setLightOpacity(1);
         setHardness(70F);
@@ -65,9 +61,8 @@ public class SourceStoneCore extends Block implements IHasModel, ITileEntityProv
     public void updateTick(World p_180650_1_, BlockPos p_180650_2_, IBlockState p_180650_3_, Random p_180650_4_) {
         //WARN: Maybe it will make lag
     }
-    @Override // Forge patch 的方法
+    @Override
     public boolean canSilkHarvest(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
-        // 这个方法决定了精准采集有没有效果。
         return false;
     }
 

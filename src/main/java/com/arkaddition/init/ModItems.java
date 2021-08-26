@@ -3,12 +3,10 @@ package com.arkaddition.init;
 
 import java.util.LinkedList;
 import java.util.List;
-
 import com.arkaddition.creativetab.ArkItemGroups;
 import com.arkaddition.items.*;
 
 
-import com.arkaddition.creativetab.TabArkAddition1;
 
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
@@ -69,21 +67,21 @@ public class ModItems {
 	public static final Item SUGAR_AGGLOMERATES = new ItemBase("sugar_agglomerates", null);
 	public static final Item SUGAR_ARK = new ItemBase("sugar_ark", null);
 	public static final Item SUGAR_GROUP = new ItemBase("sugar_group", null);
-	public static final Item SUGAR_SUBSTITUTE = new ItemBase("sugar_substitute", null);        
+	public static final Item SUGAR_SUBSTITUTE = new ItemBase("sugar_substitute", null);
 //auto Tab2
-    public static final Item FURNITURE_PARTS = new ItemBase2("furniture_parts", null);
-    public static final Item LOONG_DOOR_COIN = new ItemBase2("loong_door_coin", null);
-    public static final Item PURE_GOLD = new ItemBase2("pure_gold", null);
-    public static final Item SOURCE_JADE = new ItemBase2("source_jade", null);
-    public static final Item SOURCE_JADE_FRAGMENT = new ItemBase2("source_jade_fragment", null);
-    public static final Item SYNTHETIC_JADE = new ItemBase2("synthetic_jade", null);
+    public static final Item FURNITURE_PARTS = new ItemBase("furniture_parts", ArkItemGroups.Exchanges);
+    public static final Item LOONG_DOOR_COIN = new ItemBase("loong_door_coin", ArkItemGroups.Exchanges);
+    public static final Item PURE_GOLD = new ItemBase("pure_gold", ArkItemGroups.Exchanges);
+    public static final Item SOURCE_JADE = new ItemBase("source_jade", ArkItemGroups.Exchanges);
+    public static final Item SOURCE_JADE_FRAGMENT = new ItemBase("source_jade_fragment", ArkItemGroups.Exchanges);
+    public static final Item SYNTHETIC_JADE = new ItemBase("synthetic_jade", ArkItemGroups.Exchanges);
 //auto Tab1(3)
 	// amount, saturation, iswolfFood
-    public static final Item BAKLAVA = new FoodBase0("baklava", 5, 2,false,TabArkAddition1.TABARKADDITION1);
-    public static final Item BEAUTIFUL_MUSHROOM = new ItemBase3("beautiful_mushroom", null);
-    public static final Item DEHYDRATED_CACTUS = new FoodBase0("dehydrated_cactus", 4,6,false,TabArkAddition1.TABARKADDITION1);
+    public static final Item BAKLAVA = new FoodBase("baklava", 5, 2,false,ArkItemGroups.Materials);
+    public static final Item BEAUTIFUL_MUSHROOM = new ItemBase("beautiful_mushroom", ArkItemGroups.Others);
+    public static final Item DEHYDRATED_CACTUS = new FoodBase("dehydrated_cactus", 4,6,false,ArkItemGroups.Materials);
 
-    public static final ItemFood GAINT_HOOF_ENERGY_DRINK = new EffectDrinkBase("gaint_hoof_energy_drink", 0, 4, false, TabArkAddition1.TABARKADDITION1,
+    public static final ItemFood GAINT_HOOF_ENERGY_DRINK = new EffectDrinkBase("gaint_hoof_energy_drink", 0, 4, false, ArkItemGroups.Materials,
             new PotionEffect(MobEffects.NIGHT_VISION, 90 * 20, 0, false, true),
             new PotionEffect(MobEffects.SPEED, 90 * 20, 2, false, true),
             new PotionEffect(MobEffects.STRENGTH, 90 * 20, 2, false, true),
@@ -94,12 +92,12 @@ public class ModItems {
 
 
 
-    public static final Item KETTLE = new ItemBase3("kettle", null);
-    public static final Item MOTHERS_CHILL = new ItemBase3("mothers_chill", null);
-    public static final Item PETERHEIM_HONEY_BISCUITS = new FoodBase0("peterheim_honey_biscuits", 3,4,false,TabArkAddition1.TABARKADDITION1);
-    public static final Item QUANTUM_FIREWORKS = new ItemBase3("quantum_fireworks", null);
-    public static final Item SALTED_EGG_YOLK_CHOCOLATE = new FoodBase0("salted_egg_yolk_chocolate", 3, 4,false,TabArkAddition1.TABARKADDITION1);
-    public static final Item TWO_BURGER_SET = new FoodBase0("two_burger_set", 22,10,false,TabArkAddition1.TABARKADDITION1);
+    public static final Item KETTLE = new ItemBase("kettle", ArkItemGroups.Others);
+    public static final Item MOTHERS_CHILL = new ItemBase("mothers_chill", ArkItemGroups.Others);
+    public static final Item PETERHEIM_HONEY_BISCUITS = new FoodBase("peterheim_honey_biscuits", 3,4,false,ArkItemGroups.Materials);
+    public static final Item QUANTUM_FIREWORKS = new ItemBase("quantum_fireworks", ArkItemGroups.Others);
+    public static final Item SALTED_EGG_YOLK_CHOCOLATE = new FoodBase("salted_egg_yolk_chocolate", 3, 4,false,ArkItemGroups.Materials);
+    public static final Item TWO_BURGER_SET = new FoodBase("two_burger_set", 22,10,false,ArkItemGroups.Materials);
 
 	//-------------------------------------------------------------------
 	//At the bottom of all codes on this page, it's an initialization of the icon of every item group.

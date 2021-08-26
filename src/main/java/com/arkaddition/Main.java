@@ -56,7 +56,6 @@ public class Main {
         new ArkEventHandler();
         new S_stone();
         MinecraftForge.EVENT_BUS.register(new EntityEvents());
-        //添加注册信息
         ModSpawn.registerSpawnList();
     }
 

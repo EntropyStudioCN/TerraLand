@@ -11,7 +11,6 @@ import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentTranslation;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.world.BlockEvent.BreakEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -60,10 +59,10 @@ public class ArkEventHandler {
             if (new Random().nextInt(1919810) == 2 && player != null) {
                 player.sendMessage(new TextComponentTranslation("message.ag.arkitems.disaster.wait"));
                 timerDisWait = 6000 + new Random().nextInt(6000);
-                timerDis = new Random().nextInt(12000) + 6000;//天灾开启
+                timerDis = new Random().nextInt(12000) + 6000;//Trun on
                 posMin = new BlockPos(player.posX - 50, 0, player.posZ - 50);
             }
-        } else {//天灾时
+        } else {
             if (timerDisWait > 0) {
                 timerDisWait--;
             } else {
@@ -77,7 +76,6 @@ public class ArkEventHandler {
                         ball.setPosition(meteoCore.getX(), meteoCore.getY(), meteoCore.getZ());
                     }
                 }*/
-                //地裂
                 if (earthquake != null && new Random().nextInt(20) == 6) {
                     earthquake = earthquake.add(new Random().nextInt(3) + earthMoved, 0,
                             new Random().nextInt(3) + earthMoved);
@@ -121,8 +119,6 @@ public class ArkEventHandler {
                     }
                 }
 
-                //源石(并在陨石和地裂里罢)
-
                 if (stonegrow && (stone != null)) {
                     player.world.setBlockState(stone, ModBlocks.TORNADOO.getDefaultState());
                     stoneLeng++;
@@ -144,8 +140,7 @@ public class ArkEventHandler {
                         }
                     }
                 }
-                //生物(并在出生事件以及风里)
-                //闪电
+
                 int y = new Random().nextInt(255);
                 BlockPos lig = new BlockPos(posMin.getX() + new Random().nextInt(100), y, posMin.getZ() + new Random().nextInt(100));
                 Block blc = player.world.getBlockState(lig.up()).getBlock();
@@ -167,9 +162,7 @@ public class ArkEventHandler {
                         stoneMove[2] = new Random().nextInt(2);
                     }
                 }
-                //风:沙尘暴、龙卷
 
-                //沙尘暴
                 if (sand) {
                     BlockPos pos1 = posMin.add(0, 0, 0);
                     BlockPos pos2 = posMin.add(100, 250, 100);
@@ -206,7 +199,6 @@ public class ArkEventHandler {
                     player.world.setBlockState(sandstate.north(), Blocks.SAND.getDefaultState());
                     player.world.setBlockState(sandstate.south(), Blocks.SAND.getDefaultState());
                 }
-                //水,雨
             }
         }
     } catch (Exception e) {

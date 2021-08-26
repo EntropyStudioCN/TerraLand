@@ -12,6 +12,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+@Deprecated
 @Mod.EventBusSubscriber
 public class S_stone {
     static BlockPos point;

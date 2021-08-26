@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.Mod;
+@Deprecated
 @Mod.EventBusSubscriber
 public class Methods {
    public static void line (BlockPos pos1, BlockPos pos2, Block blc, World world) {

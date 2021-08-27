@@ -5,12 +5,14 @@ import com.arkaddition.creativetab.ArkItemGroups;
 import com.arkaddition.items.EffectDrinkBase;
 import com.arkaddition.items.FoodBase;
 import com.arkaddition.items.ItemBase;
+import com.arkaddition.items.tool.axe.AxeBase;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
+import net.minecraftforge.common.util.EnumHelper;
 
 import javax.annotation.Nonnull;
 import java.util.LinkedList;
@@ -20,6 +22,12 @@ import java.util.List;
 public class ModItems {
     @Nonnull
     public static final List<Item> ITEMS = new LinkedList<>();
+    /**
+     * ToolMaterial
+     * //static final ToolMaterial MATERIAL_OBSIDIAN =EnumHelper.addToolMaterial(name, harvestLevel, maxUses, efficiency, damage, enchantability);
+     * static final ToolMaterial MATERIAL_OBSIDIAN =EnumHelper.addToolMaterial("material_tool", 4, 2670, 15.0F, 3.0F, 40);
+     */
+    static final Item.ToolMaterial MATERIAL_DI = EnumHelper.addToolMaterial ("different_iron",5,2160,15f,10,40);
 
     //Materials
     public static final Item ALCOHOL_REVERSE = materials(new ItemBase("alcohol_reverse"));
@@ -90,6 +98,10 @@ public class ModItems {
     public static final Item MOTHERS_CHILL = others(new ItemBase("mothers_chill"));
     public static final Item QUANTUM_FIREWORKS = others(new ItemBase("quantum_fireworks"));
 
+    //axe
+    public static final Item DIFFERENT_IRON_AXE = tool(new AxeBase ("different_iron_axe",MATERIAL_DI,12f,8f));
+
+
     @Nonnull
     private static <T extends Item> T materials(@Nonnull T item) {
         return with(item, ArkItemGroups.Materials);
@@ -106,6 +118,11 @@ public class ModItems {
     }
 
     @Nonnull
+    private static <T extends Item> T tool(@Nonnull T item) {
+        return  with (item, ArkItemGroups.Tool);
+    }
+
+    @Nonnull
     private static <T extends Item> T with(@Nonnull T item, @Nonnull CreativeTabs creativeTabs) {
         item.setCreativeTab(creativeTabs);
         return item;
@@ -118,6 +135,7 @@ public class ModItems {
         ArkItemGroups.Materials.setIcon(new ItemStack(INCANDESCENT_ALLOY_BLOCK));
         ArkItemGroups.Exchanges.setIcon(new ItemStack(BAKLAVA));
         ArkItemGroups.Others.setIcon(new ItemStack(SOURCE_JADE));
+        ArkItemGroups.Tool.setIcon (new ItemStack (DIFFERENT_IRON_AXE));
     }
 }
 

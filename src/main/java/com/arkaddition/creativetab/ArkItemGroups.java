@@ -16,4 +16,6 @@ public class ArkItemGroups {
     public static final ItemGroup Others = new ItemGroup("tabarkaddition1");
     @Nonnull
     public static final ItemGroup Blocks = new ItemGroup("tabarkaddition3block0");
+    @Nonnull
+    public static final ItemGroup Tool = new ItemGroup("tabarktools");
 }

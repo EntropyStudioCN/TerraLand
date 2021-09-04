@@ -5,7 +5,7 @@ import com.arkaddition.creativetab.ArkItemGroups;
 import com.arkaddition.items.EffectDrinkBase;
 import com.arkaddition.items.FoodBase;
 import com.arkaddition.items.ItemBase;
-import com.arkaddition.items.tool.axe.AxeBase;
+import com.arkaddition.items.tool.AxeBase;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;

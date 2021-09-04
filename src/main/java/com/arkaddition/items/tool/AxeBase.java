@@ -1,6 +1,7 @@
-package com.arkaddition.items.tool.axe;
+package com.arkaddition.items.tool;
 
 import com.arkaddition.Main;
+import com.arkaddition.init.ModItems;
 import com.arkaddition.util.IHasModel;
 import net.minecraft.item.ItemAxe;
 
@@ -12,6 +13,8 @@ public class AxeBase extends ItemAxe implements IHasModel{
         super(material,Damage,Speed);
         setTranslationKey(name);
         setRegistryName(name);
+
+        ModItems.ITEMS.add (this);
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.arkaddition.commands;
 
 import com.arkaddition.Main;
+import com.arkaddition.event.S_stone;
 import com.arkaddition.world.SourceStoneThorn;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
@@ -30,8 +31,9 @@ public class TerraLandCommand extends CommandBase {
                     if (strings[1].equalsIgnoreCase("thorn")){
                         if (!(strings.length > 2)){
                             iCommandSender.sendMessage(new TextComponentString("Spawn SourceStoneThorn with random"));
-                            new SourceStoneThorn().spawn(new BlockPos(iCommandSender.getCommandSenderEntity().posX,iCommandSender.getCommandSenderEntity().posY,iCommandSender.getCommandSenderEntity().posZ),iCommandSender.getCommandSenderEntity(),
-                                    iCommandSender.getEntityWorld());
+                            //new SourceStoneThorn().spawn(new BlockPos(iCommandSender.getCommandSenderEntity().posX,iCommandSender.getCommandSenderEntity().posY,iCommandSender.getCommandSenderEntity().posZ),iCommandSender.getCommandSenderEntity(),
+                            //        iCommandSender.getEntityWorld());
+                            S_stone.genThorns(iCommandSender.getCommandSenderEntity().getPosition(), iCommandSender.getEntityWorld());
                         }
                     }
                 }else {

@@ -17,7 +17,7 @@ public class GenOreArks implements IWorldGenerator {
     {
         if (world.provider.getDimension() == 0)
         {
-            generateOverworld(random,chunkX,chunkZ, world,chunkGenerator,chunkProvider);
+            //generateOverworld(random,chunkX,chunkZ, world,chunkGenerator,chunkProvider);
 
         }
 

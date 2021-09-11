@@ -21,7 +21,7 @@ public class ModBlocks {
     public static final Block SILVER_ORE = new OreCu ("silver_ore",Material.IRON,SoundType.STONE,4.0F,2,"pickaxe");
 
     public static final Block LEAD_ORE = new OreCu ("lead_ore",Material.IRON,SoundType.STONE,3.0F,2,"pickaxe");
-    public static final Block MANGANESE_ORE = new OreCu ("manganese_ore",Material.IRON,SoundType.STONE,8.0F,3,"pickaxe");
+    public static final Block MANGANESE_ORE = new OreCu ("manganese_ore_block",Material.IRON,SoundType.STONE,8.0F,3,"pickaxe");
 
 
     public static final Block ORECU = new OreCu ("orecu",Material.IRON,SoundType.STONE,5.0f,2,"pickaxe");

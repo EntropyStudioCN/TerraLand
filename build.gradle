@@ -16,7 +16,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'com.github.johnrengelman.shadow'
 //apply plugin: 'org.spongepowered.mixin'
 
-group = 'com.arkaddition'
+group = 'com.entropycn.terraland'
 version = '1.0-SNAPSHOT'
 archivesBaseName = 'TerraLand'
 
